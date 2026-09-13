@@ -13,7 +13,7 @@ export default function LoginPage() {
 	async function login() {
 		setIsLoading(true);
 		try {
-			const res = await axios.post(import.meta.env.VITE_BACKEND_URL + "/api/users/login", {
+			const res = await axios.post(import.meta.env.VITE_BACKEND_URL + "/users/login", {
 				email: email,
 				password: password,
 			});
