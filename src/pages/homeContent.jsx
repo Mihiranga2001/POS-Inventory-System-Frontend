@@ -58,10 +58,10 @@ export default function Home() {
 					Browse Products
 				</Link>
 				<Link
-					to="/stock"
+					to="/orders"
 					className="px-8 py-3 rounded-2xl border-2 border-accent text-accent font-bold hover:bg-accent hover:text-white transition"
 				>
-					Live Stock Monitor
+					My orders
 				</Link>
 			</div>
 		</div>

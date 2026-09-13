@@ -15,7 +15,7 @@ export default function Header() {
 				className="text-white my-auto text-2xl ml-6 lg:hidden"
 			/>
 			<Link to="/" className="h-full flex items-center pl-6">
-				<h1 className="text-primary text-2xl font-bold">TECHLOOM POS</h1>
+				<h1 className="text-primary text-2xl font-bold">POS & Inventory System</h1>
 			</Link>
 			<div className="w-full h-full hidden lg:flex text-xl text-primary justify-center items-center gap-[30px]">
 				<Link to="/">Home</Link>

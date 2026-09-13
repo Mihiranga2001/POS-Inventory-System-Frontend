@@ -40,7 +40,7 @@ export default function AboutPage() {
 
 	return (
 		<div className="w-full flex flex-col items-center p-10">
-			<h1 className="text-4xl lg:text-5xl font-bold text-center">About Techloom POS</h1>
+			<h1 className="text-4xl lg:text-5xl font-bold text-center">About POS & Inventory System</h1>
 			<p className="text-lg text-secondary/70 mt-4 text-center max-w-3xl">
 				A point of sale ordering system built around one hard problem: keeping inventory
 				honest when many people buy the same limited item at the same moment.

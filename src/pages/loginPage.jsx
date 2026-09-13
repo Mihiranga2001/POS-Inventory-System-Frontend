@@ -39,7 +39,7 @@ export default function LoginPage() {
 	return (
 		<div className="w-full h-screen bg-accent flex">
 			<div className="w-[50%] h-full hidden lg:flex justify-center items-center flex-col p-[50px]">
-				<h1 className="text-[50px] text-gold text-center font-bold">TECHLOOM POS</h1>
+				<h1 className="text-[50px] text-gold text-center font-bold">POS & Inventory System</h1>
 				<p className="text-[24px] text-white italic text-center mt-4">
 					Reserve. Pay. Never oversell.
 				</p>
@@ -75,13 +75,6 @@ export default function LoginPage() {
 						<Link to="/register" className="text-gold italic ml-1">
 							Register here
 						</Link>
-					</p>
-					<p className="text-xs text-secondary/60 mt-6 text-center">
-						Seeded demo accounts
-						<br />
-						admin@techloom.ai / admin123
-						<br />
-						customer@techloom.ai / customer123
 					</p>
 				</div>
 			</div>

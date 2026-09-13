@@ -47,17 +47,17 @@ export default function ContactPage() {
 		{
 			icon: <MdOutlineEmail className="text-2xl text-accent" />,
 			label: "Email",
-			value: "support@techloom.ai",
+			value: "support@gmail.com",
 		},
 		{
 			icon: <MdOutlinePhone className="text-2xl text-accent" />,
 			label: "Phone",
-			value: "+94 11 234 5678",
+			value: "+94 11 234 0000",
 		},
 		{
 			icon: <MdOutlineLocationOn className="text-2xl text-accent" />,
 			label: "Address",
-			value: "Colombo, Sri Lanka",
+			value: "Jaffna, Sri Lanka",
 		},
 		{
 			icon: <LuClock className="text-2xl text-accent" />,

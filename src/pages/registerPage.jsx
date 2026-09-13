@@ -40,7 +40,7 @@ export default function RegisterPage() {
 	return (
 		<div className="w-full h-screen bg-accent flex">
 			<div className="w-[50%] h-full hidden lg:flex justify-center items-center flex-col p-[50px]">
-				<h1 className="text-[50px] text-gold text-center font-bold">TECHLOOM POS</h1>
+				<h1 className="text-[50px] text-gold text-center font-bold">POS & Inventory System</h1>
 				<p className="text-[24px] text-white italic text-center mt-4">
 					Create an account to start ordering.
 				</p>
