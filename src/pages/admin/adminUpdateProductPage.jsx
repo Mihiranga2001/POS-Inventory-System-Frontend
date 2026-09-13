@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { AiOutlineProduct } from "react-icons/ai";
+import ImageUploadField from "../../components/imageUploadField";
 
 export default function AdminUpdateProductPage() {
 	const location = useLocation();
@@ -120,12 +121,11 @@ export default function AdminUpdateProductPage() {
 						</p>
 					</div>
 					<div className="my-[10px] w-full">
-						<label>Image URL</label>
-						<input
-							type="text"
+						<ImageUploadField
 							value={image}
-							onChange={(e) => setImage(e.target.value)}
-							className="w-full h-[40px] rounded-2xl focus:outline-none focus:ring-2 focus:ring-accent border border-accent shadow-2xl px-[20px]"
+							onChange={(url) => {
+								setImage(url);
+							}}
 						/>
 					</div>
 					<div className="my-[10px] flex flex-col w-[40%]">
