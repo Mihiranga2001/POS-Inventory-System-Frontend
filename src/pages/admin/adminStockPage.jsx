@@ -14,7 +14,7 @@ export default function AdminStockPage() {
 		axios
 			.get(import.meta.env.VITE_BACKEND_URL + "/products/stock/all")
 			.then((response) => {
-				setStockLevels(response.data.stockLevels);
+				setStockLevels(response.data?.stockLevels || []);
 				setGeneratedAt(response.data.generatedAt);
 				setLoaded(true);
 			})

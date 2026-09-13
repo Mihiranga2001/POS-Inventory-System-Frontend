@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import Loader from "../components/loader";
 import ProductCard from "../components/productCard";
 
@@ -26,10 +27,19 @@ export default function ProductPage() {
 		axios
 			.get(import.meta.env.VITE_BACKEND_URL + "/products" + query)
 			.then((response) => {
-				setProducts(response.data.products);
+				//the backend replies with { products: [...] }, but stay safe if a
+				//plain array comes back so the page can never crash on .map()
+				const data = response.data;
+				const list = Array.isArray(data) ? data : data?.products;
+
+				setProducts(Array.isArray(list) ? list : []);
 				setLoaded(true);
 			})
-			.catch(() => {
+			.catch((err) => {
+				console.log("Failed to load products:");
+				console.log(err);
+				toast.error("Failed to load products. Check VITE_BACKEND_URL.");
+				setProducts([]);
 				setLoaded(true);
 			});
 	}
@@ -76,7 +86,7 @@ export default function ProductPage() {
 						</label>
 					</div>
 
-					{products && products.length > 0 && (
+					{products.length == 0 && (
 						<p className="w-full text-center text-secondary/60 py-10">
 							No products matched your search.
 						</p>

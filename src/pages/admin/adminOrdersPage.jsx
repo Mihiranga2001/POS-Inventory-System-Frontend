@@ -22,7 +22,7 @@ export default function AdminOrdersPage() {
 					},
 				})
 				.then((response) => {
-					setOrders(response.data.orders);
+					setOrders(Array.isArray(response.data) ? response.data : response.data?.orders || []);
 					setLoaded(true);
 				})
 				.catch(() => {

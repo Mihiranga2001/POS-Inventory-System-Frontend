@@ -16,10 +16,17 @@ export default function AdminProductsPage() {
 			axios
 				.get(import.meta.env.VITE_BACKEND_URL + "/products?limit=100")
 				.then((response) => {
-					setProducts(response.data.products);
+					const data = response.data;
+					const list = Array.isArray(data) ? data : data?.products;
+
+					setProducts(Array.isArray(list) ? list : []);
 					setLoaded(true);
 				})
-				.catch(() => {
+				.catch((err) => {
+					console.log("Failed to load products:");
+					console.log(err);
+					toast.error("Failed to load products");
+					setProducts([]);
 					setLoaded(true);
 				});
 		}

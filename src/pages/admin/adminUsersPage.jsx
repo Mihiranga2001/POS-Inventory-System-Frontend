@@ -18,7 +18,7 @@ export default function AdminUsersPage() {
 					},
 				})
 				.then((response) => {
-					setUsers(response.data);
+					setUsers(Array.isArray(response.data) ? response.data : []);
 					setLoaded(true);
 				})
 				.catch(() => {
