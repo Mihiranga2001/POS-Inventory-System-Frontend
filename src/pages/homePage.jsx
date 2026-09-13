@@ -9,6 +9,8 @@ import CartPage from "./cart";
 import CheckoutPage from "./checkOut";
 import PaymentPage from "./paymentPage";
 import OrdersPage from "./ordersPage";
+import AboutPage from "./aboutPage";
+import ContactPage from "./contactPage";
 
 export default function HomePage() {
 	return (
@@ -24,6 +26,8 @@ export default function HomePage() {
 					<Route path="/checkout" element={<CheckoutPage />} />
 					<Route path="/payment/:orderId" element={<PaymentPage />} />
 					<Route path="/orders" element={<OrdersPage />} />
+					<Route path="/about" element={<AboutPage />} />
+					<Route path="/contact" element={<ContactPage />} />
 					<Route path="/*" element={<h1 className="p-10 text-2xl">page not found</h1>} />
 				</Routes>
 			</div>

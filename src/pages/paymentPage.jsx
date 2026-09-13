@@ -195,29 +195,9 @@ export default function PaymentPage() {
 								onClick={() => pay("success", false)}
 								className="px-6 py-3 rounded-2xl bg-accent text-white font-bold border-2 border-accent hover:bg-transparent hover:text-accent transition disabled:opacity-40"
 							>
-								Pay Now (success)
+								Pay Now
 							</button>
-							<button
-								disabled={isPaying}
-								onClick={() => pay("failure", false)}
-								className="px-6 py-3 rounded-2xl bg-red-500 text-white font-bold hover:bg-red-600 transition disabled:opacity-40"
-							>
-								Simulate failure
-							</button>
-							<button
-								disabled={isPaying}
-								onClick={() => pay("timeout", false)}
-								className="px-6 py-3 rounded-2xl bg-gold text-white font-bold hover:bg-gold/80 transition disabled:opacity-40"
-							>
-								Simulate timeout
-							</button>
-							<button
-								disabled={isPaying}
-								onClick={() => pay("success", true)}
-								className="px-6 py-3 rounded-2xl border-2 border-secondary text-secondary font-bold hover:bg-secondary hover:text-white transition disabled:opacity-40"
-							>
-								Send duplicate payment
-							</button>
+							
 							<button
 								disabled={isPaying}
 								onClick={cancelOrder}

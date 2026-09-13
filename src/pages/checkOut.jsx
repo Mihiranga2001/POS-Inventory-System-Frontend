@@ -156,7 +156,7 @@ export default function CheckoutPage() {
 					onClick={reserveAndContinue}
 					className="self-center ml-4 px-6 py-3 rounded bg-accent text-white hover:bg-accent/90 transition disabled:opacity-40"
 				>
-					Reserve Stock &amp; Pay
+					Pay
 				</button>
 				<span className="pr-4 text-xl font-bold min-w-[150px] text-right">
 					LKR. {getCartTotal().toFixed(2)}

@@ -7,7 +7,7 @@ export default function Home() {
 	return (
 		<div className="w-full flex flex-col items-center p-10">
 			<h1 className="text-4xl lg:text-5xl font-bold text-center">
-				Techloom POS Order &amp; Inventory
+				POS Order &amp; Inventory System
 			</h1>
 			<p className="text-lg text-secondary/70 mt-4 text-center max-w-2xl">
 				A concurrency safe point of sale flow: stock is reserved the moment you enter

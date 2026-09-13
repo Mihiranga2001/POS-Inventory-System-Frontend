@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import { LuBoxes, LuClipboardList, LuGauge } from "react-icons/lu";
+import { MdOutlineBarChart } from "react-icons/md";
 import { FiUsers } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -10,6 +11,7 @@ import AdminAddProductPage from "./admin/adminAddProductPage";
 import AdminUpdateProductPage from "./admin/adminUpdateProductPage";
 import AdminStockPage from "./admin/adminStockPage";
 import AdminUsersPage from "./admin/adminUsersPage";
+import AdminReportPage from "./admin/adminReportPage";
 
 export default function AdminPage() {
 	const [user, setUser] = useState(null);
@@ -44,7 +46,7 @@ export default function AdminPage() {
 				<>
 					<div className="w-[300px] bg-accent h-full">
 						<div className="w-full h-[100px] flex items-center text-primary pl-6">
-							<h1 className="text-2xl font-bold">TECHLOOM Admin</h1>
+							<h1 className="text-2xl font-bold">Admin</h1>
 						</div>
 						<div className="w-full h-[400px] text-white text-2xl flex flex-col pl-[20px] pt-[20px]">
 							<Link to="/admin" className="w-full flex items-center h-[50px] gap-[10px]">
@@ -62,6 +64,10 @@ export default function AdminPage() {
 								<LuGauge />
 								Stock Monitor
 							</Link>
+							<Link to="/admin/report" className="w-full flex items-center h-[50px] gap-[10px]">
+								<MdOutlineBarChart />
+								Sales Report
+							</Link>
 							<Link to="/admin/users" className="w-full flex items-center h-[50px] gap-[10px]">
 								<FiUsers />
 								Users
@@ -75,6 +81,7 @@ export default function AdminPage() {
 							<Route path="/add-product" element={<AdminAddProductPage />} />
 							<Route path="/update-product" element={<AdminUpdateProductPage />} />
 							<Route path="/stock" element={<AdminStockPage />} />
+							<Route path="/report" element={<AdminReportPage />} />
 							<Route path="/users" element={<AdminUsersPage />} />
 						</Routes>
 					</div>

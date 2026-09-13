@@ -19,9 +19,10 @@ export default function Header() {
 			</Link>
 			<div className="w-full h-full hidden lg:flex text-xl text-primary justify-center items-center gap-[30px]">
 				<Link to="/">Home</Link>
+				<Link to="/about">About</Link>
 				<Link to="/products">Products</Link>
-				<Link to="/stock">Live Stock</Link>
 				<Link to="/orders">My Orders</Link>
+				<Link to="/contact">Contact</Link>
 			</div>
 
 			<div className="absolute right-24 top-0 h-full items-center hidden lg:flex">
@@ -40,7 +41,7 @@ export default function Header() {
 					<div className="w-[250px] h-screen flex-col relative">
 						<div className="absolute w-full h-full bg-white left-[-250px] transform-flat translate-x-[250px] transition-transform duration-1000 flex flex-col">
 							<div className="w-full h-[100px] bg-accent flex justify-center items-center">
-								<h1 className="text-primary text-xl font-bold">TECHLOOM POS</h1>
+								<h1 className="text-primary text-xl font-bold">POS & Inventory System</h1>
 								<LuListCollapse
 									onClick={() => {
 										setSideBarOpen(false);
@@ -49,22 +50,29 @@ export default function Header() {
 								/>
 							</div>
 							<div className="w-full h-full flex flex-col text-xl text-secondary justify-start items-start gap-6 mt-10 pl-6">
-								<a className="hover:text-secondary transition" href="/" onClick={() => setSideBarOpen(false)}>
-									Home
-								</a>
-								<a className="hover:text-secondary transition" href="/products" onClick={() => setSideBarOpen(false)}>
-									Products
-								</a>
-								<a className="hover:text-secondary transition" href="/stock" onClick={() => setSideBarOpen(false)}>
-									Live Stock
-								</a>
-								<a className="hover:text-secondary transition" href="/orders" onClick={() => setSideBarOpen(false)}>
-									My Orders
-								</a>
-								<div className="flex justify-center bg-accent p-2 rounded-full">
-									<UserData />
-								</div>
-							</div>
+								<Link className="hover:text-secondary transition" to="/" onClick={() => setSideBarOpen(false)}>
+								Home
+								</Link>
+								<Link className="hover:text-secondary transition" to="/products" onClick={() => setSideBarOpen(false)}>
+								Products
+								</Link>
+								<Link className="hover:text-secondary transition" to="/about" onClick={() => setSideBarOpen(false)}>
+								About
+								</Link>
+								<Link 
+								className="hover:text-secondary transition" to="/orders" onClick={() => setSideBarOpen(false)}>
+        						My Orders
+    							</Link>
+								<Link className="hover:text-secondary transition" to="/Contact" onClick={() => setSideBarOpen(false)}>
+								Contact
+								</Link>
+
+
+    						<div className="flex justify-center bg-accent p-2 rounded-full">
+        						<UserData />
+    						</div>
+
+						</div>
 						</div>
 					</div>
 				</div>
