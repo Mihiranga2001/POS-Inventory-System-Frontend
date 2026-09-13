@@ -1,28 +1,60 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function UserData() {
 	const [user, setUser] = useState(null);
 	const [selectedOption, setSelectedOption] = useState("user");
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const token = localStorage.getItem("token");
-		if (token != null) {
-			axios
-				.get(import.meta.env.VITE_BACKEND_URL + "/users/", {
-					headers: {
-						Authorization: `Bearer ${token}`,
-					},
-				})
-				.then((response) => {
-					setUser(response.data);
-				})
-				.catch(() => {
-					setUser(null);
-				});
+
+		if (token == null) {
+			return;
 		}
+
+		let active = true;
+
+		axios
+			.get(import.meta.env.VITE_BACKEND_URL + "/users/", {
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			})
+			.then((response) => {
+				if (active) {
+					setUser(response.data);
+				}
+			})
+			.catch(() => {
+				if (active) {
+					setUser(null);
+				}
+			});
+
+		return () => {
+			active = false;
+		};
 	}, []);
+
+	//navigate() keeps everything client side. window.location.href would ask the host
+	//for a real /orders file, which 404s on any static host without an SPA rewrite.
+	function handleSelect(value) {
+		if (value == "logout") {
+			localStorage.removeItem("token");
+			setUser(null);
+			toast.success("Logged out");
+			navigate("/login");
+		} else if (value == "my-orders") {
+			navigate("/orders");
+		} else if (value == "admin") {
+			navigate("/admin");
+		}
+
+		setSelectedOption("user");
+	}
 
 	return (
 		<>
@@ -32,20 +64,15 @@ export default function UserData() {
 						src={user.image}
 						referrerPolicy="no-referrer"
 						className="w-[50px] rounded-full h-[50px] object-cover"
+						onError={(e) => {
+							e.target.src = "/default.jpg";
+						}}
 					/>
 					<select
 						className="bg-transparent outline-none ml-2 text-white"
 						value={selectedOption}
 						onChange={(e) => {
-							if (e.target.value == "logout") {
-								localStorage.removeItem("token");
-								window.location.href = "/login";
-							} else if (e.target.value == "my-orders") {
-								window.location.href = "/orders";
-							} else if (e.target.value == "admin") {
-								window.location.href = "/admin";
-							}
-							setSelectedOption("user");
+							handleSelect(e.target.value);
 						}}
 					>
 						<option className="bg-accent" value={"user"}>
