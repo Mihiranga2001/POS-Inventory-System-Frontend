@@ -10,6 +10,7 @@ export default function ImageUploadField(props) {
 
 	const [file, setFile] = useState(null);
 	const [isUploading, setIsUploading] = useState(false);
+	const [errorText, setErrorText] = useState("");
 
 	const previewUrl = file != null ? URL.createObjectURL(file) : value;
 
@@ -20,6 +21,7 @@ export default function ImageUploadField(props) {
 		}
 
 		setIsUploading(true);
+		setErrorText("");
 
 		uploadImage(file)
 			.then((url) => {
@@ -30,7 +32,9 @@ export default function ImageUploadField(props) {
 			})
 			.catch((err) => {
 				setIsUploading(false);
-				toast.error(err.message);
+				//kept on screen, unlike a toast, so the real reason can be read and copied
+				setErrorText(err.message);
+				toast.error("Upload failed");
 			});
 	}
 
@@ -84,6 +88,12 @@ export default function ImageUploadField(props) {
 					<p className="text-xs text-secondary/50">
 						JPG, PNG or WEBP up to 5MB. Upload first, then save the product.
 					</p>
+
+					{errorText != "" && (
+						<div className="w-full bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm">
+							<span className="font-semibold">Upload failed:</span> {errorText}
+						</div>
+					)}
 				</div>
 			</div>
 		</div>
