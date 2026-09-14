@@ -1,315 +1,135 @@
-# Techloom POS & Inventory System
+# Techloom POS & Inventory System - Frontend
 
-A full-stack Point of Sale (POS) and Inventory Management System designed to simplify product management, inventory tracking, customer ordering, payment handling, and sales analysis.
+Frontend application for the Techloom POS & Inventory System. This React application provides user interfaces for authentication, product browsing, shopping cart, order management, inventory viewing, and admin operations.
 
-## Overview
-
-This system provides a complete workflow for managing products, monitoring stock, processing customer orders, handling payments, and generating business insights through an admin dashboard.
-
-The application is built using a modern full-stack architecture with a React frontend, Express.js backend, MongoDB database, and cloud-based image storage.
-
----
-
-## Features
-
-## 🔐 Authentication & User Management
-
-- User registration and login
-- JWT-based authentication
-- Role-based access control
-- Admin and customer user roles
-
----
-
-## 📦 Product Management
-
-- Create, update, and delete products
-- Manage product information
-- Product category management
-- Product image upload and storage
-- View available products
-
----
-
-## 📊 Inventory Management
-
-- Real-time stock monitoring
-- Stock level tracking
-- Stock reservation system
-- Prevention of overselling during concurrent purchases
-
----
-
-## 🛒 Shopping Cart & Orders
-
-- Add products to cart
-- Update cart quantities
-- Checkout process
-- Order creation
-- View customer order history
-- Track order status
-
----
-
-## 💳 Payment Management
-
-- Payment workflow simulation
-- Payment status handling
-- Stock updates after successful payments
-- Order lifecycle management
-
----
-
-## 📈 Admin Dashboard & Reports
-
-- Sales summary
-- Revenue tracking
-- Order statistics
-- Top-selling products
-- Recent order monitoring
-
----
-
-# Technology Stack
-
-## Frontend
+## Technology Stack
 
 - React.js
 - Vite
 - Tailwind CSS
 - Axios
 - React Router
+- React Icons
+- React Hot Toast
+- Vercel Deployment
 
-## Backend
+## Features
 
-- Node.js
-- Express.js
-- REST API
-- JWT Authentication
-- Middleware-based architecture
+### Authentication
 
-## Database
+- User registration and login
+- JWT token-based authentication
+- Role-based access control
+- Protected routes for users and admins
 
-- MongoDB
-- MongoDB Atlas
+### Product Management
 
-## File Storage
+- View available products
+- Product details display
+- Product image display
+- Product category browsing
+- Admin product management interface
 
-- Supabase Storage
+### Inventory Management
 
-## Deployment
+- Live stock viewing
+- Product availability checking
+- Real-time inventory information display
 
-- Frontend: Vercel
-- Backend: Render
+### Shopping Cart Management
 
----
+- Add products to cart
+- Update cart quantities
+- Remove products from cart
+- Cart summary calculation
 
-# System Architecture
+### Order Management
+
+- Checkout process
+- Create customer orders
+- View order history
+- Track order status
+
+### Admin Dashboard
+
+- Manage products
+- Manage customer orders
+- View sales reports
+- Monitor system activities
+
+### Image Management
+
+- Display product images
+- Supabase Storage image integration
+
+## Project Structure
 
 ```
-                React Frontend
-                     |
-                     |
-              Express.js API
-                     |
-        -------------------------
-        |                       |
-     MongoDB              Supabase
-     Database             Storage
+frontend
+
+├── src
+│
+├── components
+│
+├── pages
+│
+├── routes
+│
+├── assets
+│
+├── App.jsx
+│
+└── main.jsx
 ```
 
----
-
-# Project Structure
-
-```
-POS-Inventory-System
-
-├── Frontend
-│   ├── Components
-│   ├── Pages
-│   ├── Routes
-│   ├── API Integration
-│   └── Authentication
-
-└── Backend
-    ├── Controllers
-    ├── Routes
-    ├── Models
-    ├── Middleware
-    ├── Utils
-    └── Database Configuration
-```
-
----
-
-# Installation & Setup
-
-## Clone Repository
-
-```bash
-git clone <repository-url>
-```
-
----
-
-# Backend Setup
-
-Navigate to backend:
-
-```bash
-cd backend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Create `.env` file:
-
-```env
-MONGO_URL=
-
-JWT_SECRET=
-
-SUPABASE_URL=
-SUPABASE_SERVICE_KEY=
-SUPABASE_BUCKET=
-```
-
-Run backend:
-
-```bash
-npm start
-```
-
----
-
-# Frontend Setup
-
-Navigate to frontend:
-
-```bash
-cd frontend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Create `.env` file:
+## Environment Variables
 
 ```env
 VITE_BACKEND_URL=
 ```
 
-Run frontend:
+## Installation
+
+```bash
+npm install
+```
+
+## Running Application
+
+Development mode:
 
 ```bash
 npm run dev
 ```
 
----
+Production build:
 
-# API Modules
-
-## Users
-
-```
-/api/users
+```bash
+npm run build
 ```
 
-Handles:
+## API Integration
 
-- Authentication
-- User accounts
-- Authorization
+- `/api/users` - Authentication and user management
 
+- `/api/products` - Product and inventory data
 
-## Products
+- `/api/orders` - Order management
 
-```
-/api/products
-```
+- `/api/payments` - Payment handling
 
-Handles:
+- `/api/upload` - Image upload services
 
-- Product management
-- Stock information
+## Deployment
 
+Frontend: Vercel
 
-## Orders
+Backend: Render
 
-```
-/api/orders
-```
+Database: MongoDB Atlas
 
-Handles:
+Storage: Supabase Storage
 
-- Checkout
-- Orders
-- Order status
-- Sales reports
-
-
-## Upload
-
-```
-/api/upload
-```
-
-Handles:
-
-- Image upload
-- Cloud storage management
-
----
-
-# Deployment
-
-The application is deployed using:
-
-Frontend:
-
-```
-Vercel
-```
-
-Backend:
-
-```
-Render
-```
-
-Database:
-
-```
-MongoDB Atlas
-```
-
-Storage:
-
-```
-Supabase Storage
-```
-
----
-
-# Future Improvements
-
-- Real payment gateway integration
-- Mobile application
-- Advanced analytics
-- Notification system
-- Automated testing
-- Monitoring and logging
-
----
-
-# Author
+## Author
 
 Gaurawa Mihiranga
